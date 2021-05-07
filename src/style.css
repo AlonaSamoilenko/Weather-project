@@ -1,0 +1,55 @@
+body {
+  min-width: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(168, 13, 168);
+  margin-top: 4px;
+}
+h3 {
+  border: 3px solid rgb(199, 143, 137);
+  border-radius: 8px;
+  background: #fce7e5;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 24px;
+  max-width: 200px;
+}
+h4 {
+  font-family: "Roboto", sans-serif;
+  color: rgb(168, 13, 168);
+  margin: 4px;
+}
+.btn-current {
+  color: rgb(58, 20, 94);
+  font-size: 18px;
+  background: rgb(252, 231, 229);
+  border: rgb(168, 13, 168);
+}
+.btn-primary {
+  color: rgb(58, 20, 94);
+  font-size: 18px;
+  background: rgb(163, 117, 216);
+}
+.btn-details {
+  color: rgb(58, 20, 94);
+  font-size: 22px;
+  background: rgb(252, 231, 229);
+  padding: 15px 20px;
+  margin: 20px auto;
+  max-width: 300px;
+}
+.btn-link {
+  display: block;
+  margin: 0 auto;
+  color: rgb(133, 20, 124);
+}
+.list-group-item {
+  font-weight: bold;
+}
