@@ -3,7 +3,8 @@ body {
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-align: center;
 }
 h1 {
@@ -15,6 +16,9 @@ h2 {
   color: rgb(216, 61, 44);
 }
 h3 {
+  color: rgb(168, 13, 168);
+}
+h4 {
   border: 3px solid rgb(199, 143, 137);
   border-radius: 8px;
   background: #fce7e5;
@@ -37,8 +41,8 @@ h3 {
 .btn-secondary {
   margin: 4px 2px;
   font-size: 18px;
-  color: #ffff;
-  background: rgb(173, 68, 173);
+  color: black;
+  background: #fce7e5;
 }
 .list-group-item {
   font-weight: bold;
@@ -52,5 +56,5 @@ h3 {
 .btn-link {
   display: block;
   margin: 0 auto;
-  color: rgb(173, 68, 173);
+  color: rgb(43, 20, 173);
 }
