@@ -9,57 +9,86 @@ h4 {
   text-align: center;
 }
 h1 {
-  color: rgb(168, 13, 168);
-  margin-top: 4px;
+  color: rgb(0, 173, 156);
+
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 42px;
+  box-shadow: 5px 5px 10px rgb(145, 214, 207);
 }
 h2 {
-  color: rgb(188, 136, 197);
+  color: rgb(97, 94, 94);
 }
 h3 {
-  color: rgb(218, 125, 235);
+  color: rgb(7, 161, 7);
 }
 h4 {
-  border: 3px solid rgb(199, 143, 137);
+  border: 3px solid rgb(97, 94, 94);
   border-radius: 8px;
   background: #fce7e5;
   margin: 10px auto;
-  padding: 10px;
+  padding: 12px;
   font-size: 24px;
   max-width: 200px;
+  box-shadow: 5px 5px 10px #c7a4a1;
 }
 .form-control {
-  font-size: 18px;
-  background: rgb(252, 231, 229);
-  margin: 4px 2px;
+  color: black;
+  font-size: 20px;
+  background: #fce7e5;
+  padding: 13px;
+  margin: 4px 30px;
+  box-shadow: 5px 5px 10px #7a302a;
 }
 .btn-primary {
-  color: #ffff;
-  font-size: 18px;
-  background: rgb(170, 90, 170);
-  margin: 4px 2px;
+  color: black;
+  font-size: 24px;
+  background: rgb(7, 161, 7);
+  border: rgb(97, 94, 94);
+  padding: 10px;
+  margin: 4px 25px;
+  box-shadow: 5px 5px 10px teal;
+  transition: all 200ms ease-in-out;
+}
+.btn-primary:hover {
+  color: rgb(34, 33, 33);
+  background: rgb(0, 173, 156);
+  cursor: pointer;
 }
 .btn-secondary {
-  margin: 4px 2px;
-  font-size: 18px;
+  padding: 13px;
+  font-size: 20px;
   color: black;
-  background: #fce7e5;
+  background: rgb(0, 173, 156);
+  margin: 4px 23px;
+  box-shadow: 5px 5px 10px teal;
+  transition: all 200ms ease-in-out;
 }
+.btn-secondary:hover {
+  color: rgb(34, 33, 33);
+  background: #fce7e5;
+  cursor: pointer;
+}
+
 .list-group-item {
-  font-weight: 500;
+  font-weight: 300;
   font-size: 22px;
   line-height: 48px;
   color: rgb(34, 33, 33);
   column-width: 23em;
+  box-shadow: 5px 5px 10px #b3645d;
 }
 li:first-letter {
   text-transform: capitalize;
 }
 .byline {
   color: rgb(173, 68, 173);
-  margin: 26px;
+  margin: 4px 10px 4px 95px;
+  padding: 12px;
 }
 .btn-link {
   display: block;
   margin: 0 auto;
-  color: rgb(43, 20, 173);
+  margin-top: 5px;
+  color: teal;
 }
