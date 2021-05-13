@@ -20,14 +20,6 @@ let weather = {
     humidity: 20,
   },
 };
-// let city = prompt("Enter a city");
-// city = city.toLowerCase();
-
-// if (weather.hasOwnProperty(city)){
-//   alert("It is currently " + weather[city].temp + " in " + city + " with a humidity of " + weather[city].humidity);
-// } else {
-//   alert("Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+"+city);
-// }
 let now = new Date();
 function formatDate(date) {
   let days = ["Mon", "Tue", "Wed", "Tru", "Fri", "Sat", "Sun"];
@@ -104,8 +96,8 @@ celcius.addEventListener("click", convertToCelcius);
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  //T(°F) = T(°C) × 9/5 + 32
   let temperature = document.querySelector("#temperature");
+  //T(°F) = T(°C) × 9/5 + 32
   temperature.innerHTML = (temperature.innerHTML * 9) / 5 + 32;
 }
 let fahrenheit = document.querySelector("#fahrenheit");
