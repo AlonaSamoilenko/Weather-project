@@ -21,18 +21,20 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="city-name"><strong>New York City</strong></h1>
-      <h2 id="date">Current Date</h2>
-      <h3 id="time"><strong>Current time</strong></h3>
-      <h4>
-        <strong>
-          <span id="temperature">14</span> ℃
-          <!-- <a href="#" id="celcius">℃</a>
+      <div class="overview">
+        <h1 id="city-name"><strong>New York City</strong></h1>
+        <h2 id="date">Current Date</h2>
+        <h3 id="time"><strong>Current time</strong></h3>
+        <h4>
+          <strong>
+            <span id="temperature">14</span> ℃
+            <!-- <a href="#" id="celcius">℃</a>
           /
           <a href="#" id="fahrenheit">℉</a>
           🌤 -->
-        </strong>
-      </h4>
+          </strong>
+        </h4>
+      </div>
       <br />
       <div class="row g-3">
         <form id="search-form">
@@ -48,7 +50,7 @@
                 aria-label="Enter city"
               />
             </div>
-            <div class="col-xl-3">
+            <div class="col-3">
               <button type="submit" value="search" class="btn btn-primary">
                 Search
               </button>
@@ -145,15 +147,16 @@
       </div>
     </div>
     <br />
-    <a
-      class="byline"
-      href="https://github.com/AlonaSamoilenko/Weather-project"
-      target="_blank"
-    >
-      Open-source code
-    </a>
-    <strong> "by Alona Samoilenko"</strong>
-    <button type="button" class="btn btn-link">Open in maps</button>
+    <small>
+      <a
+        class="byline"
+        href="https://github.com/AlonaSamoilenko/Weather-project"
+        target="_blank"
+      >
+        Open-source code
+      </a>
+      "by Alona Samoilenko"
+    </small>
     <script src="src/script.js"></script>
   </body>
 </html>

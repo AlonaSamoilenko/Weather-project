@@ -2,19 +2,9 @@ body {
   min-width: 0;
   font-family: "Roboto", sans-serif;
 }
-h1,
-h2,
-h3,
-h4 {
-  text-align: center;
-}
 h1 {
   color: rgb(0, 173, 156);
-
-  margin-top: 10px;
-  padding: 12px;
   font-size: 42px;
-  box-shadow: 5px 5px 10px rgb(145, 214, 207);
 }
 h2 {
   color: rgb(97, 94, 94);
@@ -23,21 +13,21 @@ h3 {
   color: rgb(7, 161, 7);
 }
 h4 {
-  border: 3px solid rgb(97, 94, 94);
-  border-radius: 8px;
-  background: #fce7e5;
-  margin: 10px auto;
-  padding: 12px;
-  font-size: 24px;
-  max-width: 200px;
-  box-shadow: 5px 5px 10px #c7a4a1;
+  font-size: 34px;
+}
+.overview {
+  text-align: center;
+  margin: 10px 24px;
+  border: 1px solid rgb(0, 173, 156);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgb(145, 214, 207);
 }
 .form-control {
   color: black;
   font-size: 20px;
   background: #fce7e5;
-  padding: 13px;
-  margin: 4px 30px;
+  padding: 12px;
+  margin: 0 24px;
   box-shadow: 5px 5px 10px #7a302a;
 }
 .btn-primary {
@@ -46,7 +36,7 @@ h4 {
   background: rgb(7, 161, 7);
   border: rgb(97, 94, 94);
   padding: 10px;
-  margin: 4px 25px;
+  margin: 4px 24px;
   box-shadow: 5px 5px 10px teal;
   transition: all 200ms ease-in-out;
 }
@@ -60,7 +50,7 @@ h4 {
   font-size: 20px;
   color: black;
   background: rgb(0, 173, 156);
-  margin: 4px 23px;
+  margin: 4px 24px;
   box-shadow: 5px 5px 10px teal;
   transition: all 200ms ease-in-out;
 }
@@ -69,7 +59,14 @@ h4 {
   background: #fce7e5;
   cursor: pointer;
 }
-
+#days-details {
+  margin-right: 46px;
+  margin-left: -8px;
+}
+#details-table {
+  margin-left: -8px;
+  margin-right: 46px;
+}
 .list-group-item {
   font-weight: 300;
   font-size: 22px;
@@ -81,14 +78,9 @@ h4 {
 li:first-letter {
   text-transform: capitalize;
 }
-.byline {
-  color: rgb(173, 68, 173);
-  margin: 4px 10px 4px 95px;
-  padding: 12px;
-}
-.btn-link {
-  display: block;
-  margin: 0 auto;
-  margin-top: 5px;
-  color: teal;
+small {
+  margin-left: 68px;
+  font-size: 1.025em;
+  font-weight: 350;
+  padding: 20px;
 }
