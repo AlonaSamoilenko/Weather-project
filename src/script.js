@@ -77,6 +77,13 @@ function displayFeelsLike(response) {
   feelsLike = Math.round(response.data.main.feels_like);
   feelsLikeElement.innerHTML = feelsLike + " ℃";
 }
+function displayIcon(response) {
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
 
 function displayForecast(response) {
   displayCity(response);
@@ -85,6 +92,7 @@ function displayForecast(response) {
   displayWind(response);
   displayHumidity(response);
   displayTime(response);
+  displayIcon(response);
 }
 
 function search(event) {
