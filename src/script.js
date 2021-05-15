@@ -1,6 +1,13 @@
-let now = new Date();
 function formatDate(date) {
-  let days = ["Mon", "Tue", "Wed", "Tru", "Fri", "Sat", "Sun"];
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
   let months = [
     "January",
     "February",
@@ -20,11 +27,30 @@ function formatDate(date) {
   let currentYear = date.getFullYear();
   let currentMonth = months[date.getMonth()];
 
-  return `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+  return `Last updated: ${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
 }
 
+let now = new Date();
 let theDate = document.querySelector("#date");
 theDate.innerHTML = formatDate(now);
+
+function formatTime(timestamp) {
+  let currentTime = new Date(timestamp);
+  let hours = currentTime.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentTime.getMinutes();
+  if (minutes < 10) {
+    minutes = `0 ${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function displayTime(response) {
+  let timeElement = document.querySelector("#time");
+  timeElement.innerHTML = formatTime(response.data.dt * 1000);
+}
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -58,6 +84,7 @@ function displayForecast(response) {
   displayTemperature(response);
   displayWind(response);
   displayHumidity(response);
+  displayTime(response);
 }
 
 function search(event) {
