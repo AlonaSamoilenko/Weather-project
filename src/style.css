@@ -14,7 +14,7 @@ h3 {
 }
 h4 {
   color: rgb(0, 173, 156);
-  font-size: 34px;
+  font-size: 67px;
 }
 .overview {
   text-align: center;
@@ -22,6 +22,21 @@ h4 {
   border: 1px solid rgb(0, 173, 156);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgb(145, 214, 207);
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 18px;
+  top: -35px;
+}
+.weather-temperature .active {
+  color: rgb(97, 94, 94);
+  cursor: default;
+  text-decoration: none;
+}
+#fahrenheit-link {
+  color: rgb(0, 173, 156);
+  text-decoration: none;
+  cursor: default;
 }
 .form-control {
   color: black;

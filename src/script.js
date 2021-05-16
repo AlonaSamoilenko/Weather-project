@@ -54,8 +54,8 @@ function displayTime(response) {
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.main.temp);
-  temperatureElement.innerHTML = temperature;
+  celsiusTemperature = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = celsiusTemperature;
 }
 function displayCity(response) {
   let cityElement = document.querySelector("#city-name");
@@ -103,8 +103,36 @@ function search(event) {
 
   axios.get(`${apiUrl}`).then(displayForecast);
 }
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function handlePosition(position) {
   let latitude = position.coords.latitude;
@@ -121,16 +149,3 @@ function currentPosition() {
 
 let buttonCurrentLocation = document.querySelector("#current-location");
 buttonCurrentLocation.addEventListener("click", currentPosition);
-
-function convertToCelcius(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  // T(°C) = (T(°F) - 32) × 5/9
-  temperature.innerHTML = ((temperature.innerHTML - 32) * 5) / 9;
-}
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  //T(°F) = T(°C) × 9/5 + 32
-  temperature.innerHTML = (temperature.innerHTML * 9) / 5 + 32;
-}
