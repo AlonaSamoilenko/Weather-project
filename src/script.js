@@ -47,7 +47,8 @@ function formatTime(timestamp) {
   return `${hours}:${minutes}`;
 }
 
-function displayWeatherForecast() {
+function displayWeatherForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<li class="list-group-item">`;
@@ -85,6 +86,12 @@ function displayWeatherForecast() {
 
   forecastHTML = forecastHTML + `</li> `;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getWeatherForcast(coordinates) {
+  let apiKey = "4a77ff67bcabd0a98acfc53b339a7788";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherForecast);
 }
 
 function displayTime(response) {
@@ -133,6 +140,7 @@ function displayForecast(response) {
   displayHumidity(response);
   displayTime(response);
   displayIcon(response);
+  getWeatherForcast(response.data.coord);
 }
 
 function search(event) {
@@ -189,5 +197,3 @@ function currentPosition() {
 
 let buttonCurrentLocation = document.querySelector("#current-location");
 buttonCurrentLocation.addEventListener("click", currentPosition);
-
-displayWeatherForecast();
