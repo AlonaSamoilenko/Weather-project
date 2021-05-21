@@ -1,13 +1,14 @@
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
 function formatDate(date) {
-  let days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
   let months = [
     "January",
     "February",
@@ -42,46 +43,54 @@ function formatTime(timestamp) {
   }
   let minutes = currentTime.getMinutes();
   if (minutes < 10) {
-    minutes = `0 ${minutes}`;
+    minutes = `0${minutes}`;
   }
   return `${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];
+}
+
 function displayWeatherForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<li class="list-group-item">`;
-  let days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="row" id="weather-forecast">
        <div class="col-4" id="forecast-date">
-       ${day}
+       ${formatDay(forecastDay.dt)}
        </div>
        <div class="col-4">
          <img
-           src="http://openweathermap.org/img/wn/01d@2x.png"
+           src="http://openweathermap.org/img/wn/${
+             forecastDay.weather[0].icon
+           }@2x.png"
            alt=""
-           width="36"
+           width="46"
          />
        </div>
        <div class="col-4" id="forecast-temperature">
-         <span id="forecast-temperature-max"> +19° </span>
-         <span id="forecast-temperature-min"> +12° </span>
+         <span id="forecast-temperature-max"> ${Math.round(
+           forecastDay.temp.max
+         )}° </span>
+         /
+         <span id="forecast-temperature-min"> ${Math.round(
+           forecastDay.temp.min
+         )}° </span>
        </div>
      </div> 
      `;
+    }
   });
 
   forecastHTML = forecastHTML + `</li> `;
@@ -197,3 +206,5 @@ function currentPosition() {
 
 let buttonCurrentLocation = document.querySelector("#current-location");
 buttonCurrentLocation.addEventListener("click", currentPosition);
+
+currentPosition();

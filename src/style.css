@@ -103,3 +103,6 @@ small {
 #forecast {
   margin-left: 22px;
 }
+#forecast-temperature-max {
+  font-weight: bold;
+}
